@@ -3,9 +3,9 @@ import { useAnecdoteActions } from '../store'
 const AnecdoteForm = () => {
   const { addAnecdote } = useAnecdoteActions()
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault()
-    addAnecdote(event.target.anecdote.value)
+    await addAnecdote(event.target.anecdote.value)
     event.target.reset()
   }
 
